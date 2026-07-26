@@ -19,15 +19,19 @@ export const Route = createFileRoute("/posts/$slug")({
     if (!post) throw notFound();
     return post;
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData.title} — Crónica` },
-      { name: "description", content: loaderData.excerpt },
-      { property: "og:title", content: loaderData.title },
-      { property: "og:description", content: loaderData.excerpt },
-      { property: "og:type", content: "article" },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const title = loaderData?.title ?? "Artículo";
+    const excerpt = loaderData?.excerpt ?? "";
+    return {
+      meta: [
+        { title: `${title} — Crónica` },
+        { name: "description", content: excerpt },
+        { property: "og:title", content: title },
+        { property: "og:description", content: excerpt },
+        { property: "og:type", content: "article" },
+      ],
+    };
+  },
   component: PostDetail,
   notFoundComponent: PostNotFound,
 });
