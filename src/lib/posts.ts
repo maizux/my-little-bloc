@@ -11,6 +11,7 @@ export type Post = {
   date: string;
   readTime: string;
   imageKey: string;
+  cardImageKey: string;
   context: string;
   problem: string;
   actions: string;
