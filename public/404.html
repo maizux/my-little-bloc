@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my-little-bloc</title>
+    <script>
+      const path = window.location.pathname + window.location.search + window.location.hash;
+      const repoBase = "/my-little-bloc";
+      const normalizedPath = path === "/" ? "" : path;
+      const target = `${repoBase}/#${encodeURIComponent(normalizedPath)}`;
+      window.location.replace(target);
+    </script>
   </head>
   <body>
-    <main>Recargando aplicación…</main>
+    <main>Redirigiendo…</main>
   </body>
 </html>
