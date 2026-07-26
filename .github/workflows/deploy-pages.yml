@@ -36,7 +36,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.output/public
+          # TanStack Start static prerender output (nitro disabled for Pages).
+          path: ./dist/client
 
   deploy:
     needs: build

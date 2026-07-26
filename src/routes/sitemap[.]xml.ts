@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getAllPosts } from "@/lib/posts";
 
-// TODO: replace with your project URL once a project name or custom domain is set.
-const BASE_URL = "";
+// GitHub Pages project site. Update if you add a custom domain.
+const BASE_URL = "https://maizux.github.io/my-little-bloc";
 
 interface SitemapEntry {
   path: string;
