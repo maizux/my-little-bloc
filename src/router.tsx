@@ -10,13 +10,17 @@ const restoreRedirectPath = () => {
 
   window.sessionStorage.removeItem("redirectPath");
 
-  const basePath = import.meta.env.BASE_URL;
-  const canonicalPath = redirectPath.startsWith(basePath)
-    ? redirectPath.replace(basePath, "/")
-    : redirectPath;
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const normalizedPath = redirectPath.startsWith(basePath)
+    ? redirectPath
+    : redirectPath.startsWith("/")
+      ? `${basePath}${redirectPath}`
+      : `${basePath}/${redirectPath}`;
 
-  if (canonicalPath.startsWith("/")) {
-    window.history.replaceState(null, "", canonicalPath);
+  const targetPath = `${new URL(normalizedPath, window.location.origin).pathname}${new URL(normalizedPath, window.location.origin).search}${new URL(normalizedPath, window.location.origin).hash}`;
+
+  if (targetPath !== window.location.pathname + window.location.search + window.location.hash) {
+    window.history.replaceState(null, "", targetPath);
   }
 };
 
