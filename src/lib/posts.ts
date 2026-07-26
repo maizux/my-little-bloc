@@ -30,6 +30,7 @@ export const posts: Post[] = [
     date: "12 de Mayo, 2024",
     readTime: "8 min",
     imageKey: "hero",
+    cardImageKey: "paper",
     context:
       "Somos una app web en React que consume datos en tiempo real para dashboards de operaciones. Hace tres semanas migramos parte del estado global a una capa de caché compartida con Redis, buscando reducir la carga en la base de datos y mejorar la experiencia de filtrado.",
     problem:
@@ -63,6 +64,7 @@ export const posts: Post[] = [
     date: "15 Abr, 2024",
     readTime: "12 min",
     imageKey: "concrete",
+    cardImageKey: "concrete",
     context:
       "Llevábamos meses migrando un backend de Node.js puro a TypeScript. El objetivo era reducir errores de tipado, mejorar la autocompletación y preparar el terreno para un dominio más complejo. El proceso parecía controlado: los tests pasaban, el build compilaba y el despliegue en staging fue tranquilo.",
     problem:
@@ -96,6 +98,7 @@ export const posts: Post[] = [
     date: "28 Mar, 2024",
     readTime: "5 min",
     imageKey: "camera",
+    cardImageKey: "camera",
     context:
       "El dashboard de analytics es una de las funcionalidades más usadas por los equipos de operaciones. Muestra métricas agregadas por fecha, usuario y tipo de evento. Históricamente había respondido en menos de 200 ms, incluso con millones de filas.",
     problem:
