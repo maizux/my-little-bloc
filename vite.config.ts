@@ -10,6 +10,11 @@ const repoName = "my-little-bloc";
 
 export default defineConfig(({ mode }) => ({
   base: mode === "production" ? `/${repoName}/` : "/",
+  build: {
+    manifest: true,
+    assetsDir: "assets",
+  },
+  publicDir: "public",
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
