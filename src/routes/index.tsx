@@ -101,7 +101,7 @@ function Index() {
             <PostCard
               key={post.slug}
               post={post}
-              image={imageMap[post.imageKey]}
+              image={imageMap[post.cardImageKey]}
               index={index}
             />
           ))}
